@@ -29,7 +29,7 @@ Each player gets his own array:
 | clan    | υηιqυє  |
 | country | 276     |
 | score   | 19      |
-| player  | 0       |
+| player  | 1       |
 
 ## Usage
 Download teeworlds\_server\_info.php and include it. Create an array with the
@@ -47,10 +47,10 @@ later, only specific ones are overwritten by the function.
 After the function returns each server array contains the `response` key. It
 is true if we got a response from the server. In that case this server array
 is also guaranteed to contain all of the keys mentioned in the table above,
-as well as a `clients` key which stores a indexed array of client arrays with
+as well as a `clients` key which stores an indexed array of client arrays with
 the keys shown above.
 
-For a full working example can be found in the demo.php file.
+A full working example can be found in the demo.php file.
 
 ## License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
