@@ -111,11 +111,18 @@ function parse_info($type, $slots, $initclients, &$server)
     $clientnum = 0;
     if ($type === '64legacy') {
         $clientnum = unpack_int($slots);
+        if ($clientnum < 0 || $clientnum >= 64) {
+            return;
+        }
     }
 
     $packetnum = 0;
     if ($type === 'extmore') {
         $packetnum = intval(array_shift($slots));
+        // 0 is reserved for the main ext packet
+        if ($packetnum <= 0 || $packetnum >= 64) {
+            return;
+        }
     }
 
     if ($server['type'] === 'ext') {
